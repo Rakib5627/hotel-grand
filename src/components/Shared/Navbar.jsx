@@ -12,9 +12,9 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-my-pink rounded-b-lg mb-20 text-my-blue">
+        <div className="navbar bg-my-pink rounded-b-lg text-my-blue">
             <div className="navbar-start">
-                <Link className="normal-case text-lg md:text-3xl font-bold">Event Planner</Link>
+                <Link className="normal-case text-lg md:text-3xl font-bold">Hotel</Link>
             </div>
             <div className="navbar-end">
                 <div className="dropdown">
