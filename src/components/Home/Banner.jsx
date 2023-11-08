@@ -5,7 +5,7 @@ import img4 from "../../assets/302861125.jpg"
 import img5 from "../../assets/302861137.jpg"
 import img6 from "../../assets/328510581.jpg"
 import img7 from "../../assets/301255095.jpg"
-import img from "../../assets/WhatsApp Image 2023-11-05 at 3.45.21 PM.jpeg"
+// import img from "../../assets/WhatsApp Image 2023-11-05 at 3.45.21 PM.jpeg"
 
 
 
@@ -56,12 +56,10 @@ const Banner = () => {
                     <p></p>
                   </div>
             </div> */}
-            {/* https://i.ibb.co/b336vk1/single-room.jpg
-            https://i.ibb.co/r7jfBXZ/couple-room.jpg
-            https://i.ibb.co/h1bBXfr/delux.jpg
-            https://i.ibb.co/DK1xmQx/family.jpg
-            https://i.ibb.co/y0smbJd/double-bed.jpg
-            https://i.ibb.co/7X0SzvW/joint-room.jpg */}
+
+            
+           
+            
         </div>
     );
 };

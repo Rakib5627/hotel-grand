@@ -1,0 +1,44 @@
+[
+    {
+      "roomDescription": "Standard Single Room",
+      "pricePerNight": 100,
+      "roomSize": "200 sq. ft",
+      "availability": true,
+      "roomImages": "https://i.ibb.co/b336vk1/single-room.jpg"           
+    },
+    {
+      "roomDescription": "Couple Room",
+      "pricePerNight": 150,
+      "roomSize": "300 sq. ft",
+      "availability": true,
+      "roomImages": "https://i.ibb.co/r7jfBXZ/couple-room.jpg"
+    },
+    {
+      "roomDescription": "Double Delux",
+      "pricePerNight": 250,
+      "roomSize": "500 sq. ft",
+      "availability": false,
+      "roomImages": "https://i.ibb.co/h1bBXfr/delux.jpg"
+    },
+    {
+      "roomDescription": "Family Room",
+      "pricePerNight": 250,
+      "roomSize": "500 sq. ft",
+      "availability": false,
+      "roomImages": "https://i.ibb.co/DK1xmQx/family.jpg"
+    },
+    {
+      "roomDescription": "Family Suit",
+      "pricePerNight": 250,
+      "roomSize": "500 sq. ft",
+      "availability": false,
+      "roomImages": " https://i.ibb.co/y0smbJd/double-bed.jpg"
+    },
+    {
+      "roomDescription": "Executive Suite",
+      "pricePerNight": 300,
+      "roomSize": "600 sq. ft",
+      "availability": true,
+      "roomImages": "https://i.ibb.co/7X0SzvW/joint-room.jpg"
+    }
+  ]

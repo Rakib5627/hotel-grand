@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 const Login = () => {
 
-
+    const {signIn , signInWithGoogle} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
     
     const handleLogin = event => {
         event.preventDefault();
@@ -11,15 +15,26 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
-        // signIn(email, password)
-        //     .then(result => {
-        //         const user = result.user;
-        //         console.log(user);
-        //     })
-        //     .catch(error => console.log(error));
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.log(error));
     }
 
 
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user)
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
 
 
 
@@ -45,7 +60,7 @@ const Login = () => {
         </form>
         <p className="text-center my-4">Do not have an account <Link className="text-blue-600 font-bold" to="/signup">Register</Link></p>
         <div className="border border-x-1 opacity-20"></div>
-        {/* <p className="mt-4 text-center"><button onClick={handleGoogleSignIn} className="btn btn-ghost">Sign in with Google</button></p> */}
+        <p className="mt-4 text-center"><button onClick={handleGoogleSignIn} className="btn btn-ghost">Sign in with Google</button></p>
     </div>
     );
 };

@@ -1,8 +1,13 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 
 const SIgnUp = () => {
 
+    const { createUser , signInWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const handleSignUp = event => {
         event.preventDefault();
@@ -13,17 +18,29 @@ const SIgnUp = () => {
         console.log(name, email, password)
 
 
-        // createUser(email, password)
-        //     .then(result => {
-        //         const user = result.user;
-        //         console.log('created user', user)
-        //     })
-        //     .catch(error => console.log(error))
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log('created user', user)
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => console.log(error))
 
     }
 
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user)
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
 
     return (
+        <div>
         <div className=" text-my-blue bg-neutral-50 mx-auto md:w-1/2 shadow-xl py-5">
             <h2 className="text-3xl my-10 text-center">Please Sign Up</h2>
             <form onSubmit={handleSignUp} className=" md:w-3/4 lg:w-1/2 mx-auto">
@@ -37,7 +54,7 @@ const SIgnUp = () => {
                     <label className="label">
                         <span className="label-text">Photo URL</span>
                     </label>
-                    <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered" required />
+                    <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">
@@ -60,8 +77,9 @@ const SIgnUp = () => {
             </form>
             <p className="text-center mt-4">Already have an account? <Link className="text-blue-600 font-bold" to="/login">Login Here</Link></p>
             <div className="border border-x-1 opacity-20"></div>
-            {/* <p className="mt-4 text-center"><button onClick={handleGoogleSignIn} className="btn btn-ghost">Sign in with Google</button></p> */}
+            <p className="mt-4 text-center"><button onClick={handleGoogleSignIn} className="btn btn-ghost">Sign in with Google</button></p>
         </div>
+    </div>
     );
 };
 
