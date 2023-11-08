@@ -6,6 +6,15 @@ const RoomDetails = () => {
     const details = useLoaderData();
     console.log(details)
 
+   let avl = 'Not Available' ;
+
+   if(details.availability === true) {
+     avl = 'Available' ;
+   }
+
+   
+
+
     return (
         <div>
             <Link to={`/book/${details._id}`}>
@@ -19,18 +28,17 @@ const RoomDetails = () => {
                     </div>
                 </div>
             </Link>
-            <div>
-                <h3 className="text-xl md:text-4xl text-center" >In the Heart of Seattle <br />
-                    Near the Space Needle</h3>
-                <p>Welcome to Pan Pacific Seattle, a Forbes recommended, AAA Four-Diamond and Conde Nast Top Hotel offering unparalleled hospitality and an authentic Pacific Northwest experience. Let us enliven your stay with attentive service and thoughtful touches like oversized soaking tubs, premium linens and technology-enhanced workspaces. We welcome your canine companions with added amenities and special treats with our Paw Pacific Pets program. Inviting and intuitive, no other hotel captures the essence of the Emerald City like we do.
-                </p>
-                <p>
-
-                    Take in the sweeping Space Needle and South Lake Union views and let our serene retreat be your base for all your pursuits. Relax with an evening glass of local Washington wine paired with fresh, seasonal cuisine at our sophisticated restaurant, South Lake Kitchen + Bar. Elevate your indulgence with Space Needle views from the outdoor patio, then retreat into the contemporary comforts of our well-appointed accommodations.
-                </p>
-                <p>
-                Explore the Emerald City’s top attractions: catch a show at the stunning Climate Pledge Arena, experience the farm-to-table freshness of the buzzing dining scene, and enjoy convenient access to all the global companies that surround Pan Pacific Seattle.
-                </p>
+            <div className="card">
+                <div className="card-body">
+                    <h2 className="card-title">{details.roomDescription}
+                    <div className="badge badge-accent">{avl}</div>
+                    </h2>
+                    <p>Price {details.pricePerNight}$</p>
+                    <p>Size: {details.roomSize}</p>
+                    <div className="card-actions">
+                    <Link to={`/book/${details._id}`}><button className="btn btn-outline btn-accent">Book Now</button> </Link>
+                    </div>
+                </div>
             </div>
         </div>
     );

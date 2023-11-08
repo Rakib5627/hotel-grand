@@ -1,4 +1,4 @@
-import img from "../../assets/WhatsApp Image 2023-11-05 at 3.45.21 PM.jpeg"
+
 
 const Map = () => {
     return (
