@@ -2,8 +2,8 @@
 
 const Map = () => {
     return (
-        <div className="mt-20 flex gap-10">
-            <div className="w-1/2">
+        <div className="mt-20 lg:flex gap-10">
+            <div className="w-full lg:w-1/2">
                 <iframe className="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13330.476603985371!2d89.230962485637!3d25.746536748644882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e32de4cc6a6985%3A0x7bd5104fa37f038b!2sGrand%20Palace%20Hotel!5e0!3m2!1sen!2sbd!4v1699438346516!5m2!1sen!2sbd" allowfullscreen="" loading="lazy"></iframe>
             </div>
          
