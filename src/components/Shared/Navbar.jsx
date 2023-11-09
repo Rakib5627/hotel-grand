@@ -43,7 +43,7 @@ const Navbar = () => {
 
             </div>
             <div className="navbar-center">
-                <Link className="normal-case text-lg md:text-3xl font-bold">Hotel</Link>
+                <Link className="normal-case text-lg md:text-3xl font-bold"><i>Hotel Grand Palace</i></Link>
             </div>
             <div className="navbar-end">
             {
