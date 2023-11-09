@@ -10,6 +10,7 @@ import BookHere from "../Rooms/BookHere";
 import Bookings from "../Rooms/Bookings";
 import UpdateBook from "../Rooms/updateBook";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "./ErrorPage";
 
 
 
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement : <ErrorPage></ErrorPage>,
     children: [
       {
           path: '/',

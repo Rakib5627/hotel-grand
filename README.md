@@ -1,6 +1,6 @@
 # Hotel Grand Palace
 
-live link : https://electro-tech-ee584.web.app/
+https://hotel-website-2fba0.web.app/
 
 # Website Features
 
