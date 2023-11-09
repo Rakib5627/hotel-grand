@@ -11,7 +11,7 @@ const UpdateBook = () => {
         console.log('clicked')
         const date = event.target.date.value;
         
-        fetch(`http://localhost:5000/bookings/${id.id}`, {
+        fetch(`https://hotel-website-server-rouge.vercel.app/bookings/${id.id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

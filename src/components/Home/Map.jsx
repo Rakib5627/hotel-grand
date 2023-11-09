@@ -20,9 +20,7 @@ const Map = () => {
                 Explore the Emerald City’s top attractions: catch a show at the stunning Climate Pledge Arena, experience the farm-to-table freshness of the buzzing dining scene, and enjoy convenient access to all the global companies that surround Pan Pacific Seattle.
                 </p>
             </div>
-            {/* <div>
-                 <img src={img} alt="" height="600px" className=""/>
-            </div> */}
+
         </div>
     );
 };

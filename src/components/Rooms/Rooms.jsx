@@ -4,7 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const Rooms = () => {
 
     const rooms = useLoaderData();
-    
+    console.log(rooms);
 
     return (
         <div className="grid grid-cols-3 gap-10">

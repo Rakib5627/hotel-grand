@@ -23,6 +23,13 @@ const SIgnUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log('created user', user)
+                Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "Signed Up",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => console.log(error))

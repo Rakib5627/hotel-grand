@@ -12,7 +12,7 @@ const ShowReview = ({ serve }) => {
     // const url = `localhost:5000/reviews/${title}`;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${serve}`)
+        fetch(`https://hotel-website-server-rouge.vercel.app/reviews/${serve}`)
             .then(res => res.json())
             .then(data => setReviews(data))
 
