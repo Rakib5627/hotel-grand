@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const BookHere = () => {
@@ -8,6 +9,8 @@ const BookHere = () => {
     const bookHere = useLoaderData();
     const { roomDescription, _id, pricePerNight, roomImages } = bookHere;
     const { user } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
 
     const handleBookHere = event => {
@@ -40,7 +43,14 @@ const BookHere = () => {
             .then(data => {
                 console.log(data);
                 if (data.insertedId) {
-                    alert('service book successfully')
+                    Swal.fire({
+                        position: "top-center",
+                        icon: "success",
+                        title: "Booked Successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
+                      navigate("/bookings")
                 }
             })
 

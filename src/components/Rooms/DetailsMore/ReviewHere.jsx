@@ -28,8 +28,8 @@ const ReviewHere = ({ details }) => {
             description,
             rating,
             timestamp,
-            title: roomDescription,
-            service_id: _id,
+            roomTitle:roomDescription,
+            title:_id,
         }
 
         console.log(review);
@@ -96,7 +96,7 @@ const ReviewHere = ({ details }) => {
 
                 </div>
                 <div className="form-control mt-6">
-                    <input className="btn btn-primary btn-block" type="submit" value="Order Confirm" />
+                    <input className="btn  btn-accent btn-block" type="submit" value="Submit review" />
                 </div>
             </form>
             <div className="card-body">

@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import BookingCard from "./BookingCard";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 
 
@@ -20,8 +21,7 @@ const Bookings = () => {
     }, [url]);
 
     const handleDelete = id => {
-        const proceed = confirm('Are You sure you want to delete');
-        if (proceed) {
+        
             fetch(`http://localhost:5000/bookings/${id}`, {
                 method: 'DELETE'
             })
@@ -29,21 +29,37 @@ const Bookings = () => {
                 .then(data => {
                     console.log(data);
                     if (data.deletedCount > 0) {
-                        alert('deleted successful');
+                        Swal.fire({
+                            title: "Are you sure?",
+                            text: "You won't be able to revert this!",
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#3085d6",
+                            cancelButtonColor: "#d33",
+                            confirmButtonText: "Yes, delete it!"
+                          }).then((result) => {
+                            if (result.isConfirmed) {
+                              Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                              });
+                            }
+                          });
                         const remaining = bookings.filter(booking => booking._id !== id);
                         setBookings(remaining);
                     }
                 })
-        }
+        
     }
 
-    const handleUpdate = id => {
+    const handleUpdate = (id,date) => {
         fetch(`http://localhost:5000/bookings/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({ status: '' })
+            body: JSON.stringify({date })
         })
             .then(res => res.json())
             .then(data => {

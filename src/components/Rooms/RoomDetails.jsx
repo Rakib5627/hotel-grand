@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import ReviewHere from "./DetailsMore/ReviewHere";
+import ShowReview from "./DetailsMore/ShowReview";
 
 
 
@@ -17,6 +18,9 @@ const RoomDetails = () => {
    const price = details.pricePerNight;
    const newPrice = price + price * 0.2 ;
 
+   const title = details.roomDescription;
+   const serve =details._id;
+
 
     return (
         <div>
@@ -33,7 +37,7 @@ const RoomDetails = () => {
             </Link>
             <div className="md:grid md:grid-cols-3">
                 <div className="card-body">
-                    <h2 className="card-title">{details.roomDescription}
+                    <h2 className="card-title">{title}
                     <div className="badge badge-accent">{avl}</div>
                     </h2>
                     <p>Size: {details.roomSize}</p>
@@ -69,6 +73,8 @@ const RoomDetails = () => {
             </div>
 
             <div>
+
+                <ShowReview serve={serve} ></ShowReview>
                
                 <ReviewHere details={details} ></ReviewHere>
 

@@ -1,6 +1,8 @@
+import { Link, Navigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
-const BookingCard = ({ booking, handleDelete , handleUpdate }) => {
+const BookingCard = ({ booking, handleDelete , handleUpdate}) => {
 
     const { _id, date, title, price, roomImages } = booking;
 
@@ -48,7 +50,12 @@ const BookingCard = ({ booking, handleDelete , handleUpdate }) => {
                         handleDelete(_id)
                     }
                     else{
-                        alert('Cannot Delete')
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: "Cannot delete",
+                            
+                          });
                     }
                      
                     }      
@@ -59,18 +66,24 @@ const BookingCard = ({ booking, handleDelete , handleUpdate }) => {
             </th>
             <th>
 
-                <button onClick={() => {
+                {/* <button onClick={() => {
                     if(date1 > date2) {
                         console.log('you can')
-                        handleUpdate(_id)
+                        handleUpdate(_id,date)
                     }
                     else{
-                        alert('Cannot Update')
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: "Cannot Update",
+                            
+                          });
                     }
                      
                     }      
                 } 
-                 className="btn btn-ghost btn-xs">Update</button>
+                 className="btn btn-ghost btn-xs">Update</button> */}
+                 <Link to={`/update/${_id}`}>update</Link>
             </th>
         </tr>
     );

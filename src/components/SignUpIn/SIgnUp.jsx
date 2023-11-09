@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const SIgnUp = () => {
@@ -32,6 +33,13 @@ const SIgnUp = () => {
         signInWithGoogle()
             .then(result => {
                 console.log(result.user)
+                Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "Signed Up",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {

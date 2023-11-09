@@ -8,6 +8,8 @@ import Rooms from "../Rooms/Rooms";
 import RoomDetails from "../Rooms/RoomDetails";
 import BookHere from "../Rooms/BookHere";
 import Bookings from "../Rooms/Bookings";
+import UpdateBook from "../Rooms/updateBook";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -46,8 +48,14 @@ const router = createBrowserRouter([
 
       }, 
       {
+          path: '/update/:id',
+          element: <UpdateBook/>,
+          loader: ({params}) => fetch(`http://localhost:5000/rooms/${params.id}`)
+
+      }, 
+      {
           path: '/bookings', 
-          element: <Bookings></Bookings>
+          element: <PrivateRoute> <Bookings></Bookings></PrivateRoute>
       }, 
       {
           path: '/login', 
