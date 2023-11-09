@@ -38,7 +38,7 @@ const RoomDetails = () => {
             <div className="md:grid md:grid-cols-3">
                 <div className="card-body">
                     <h2 className="card-title">{title}
-                    <div className="badge badge-accent">{avl}</div>
+                    <div className="badge badge-accent badge-lg text-xs">{avl}</div>
                     </h2>
                     <p>Size: {details.roomSize}</p>
                     <p>City Skyline</p>
