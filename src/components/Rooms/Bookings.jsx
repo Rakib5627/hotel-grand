@@ -37,25 +37,38 @@ const Bookings = () => {
         }
     }
 
+    const handleUpdate = id => {
+        fetch(`http://localhost:5000/bookings/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ status: '' })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                
+            })
+    }
+
     
     return (
         <div>
-            <h2 className="text-5xl">Your bookings: {bookings.length}</h2>
+            
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
            
                     <thead>
                         <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
+                            
                             <th>Image</th>
-                            <th>Service</th>
+                            <th>Name</th>
                             <th>Date</th>
+                            <th>Check In</th>
                             <th>Price</th>
-                            <th>Status</th>
+                            <th>Delete</th>
+                            <th>Update</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,6 +77,7 @@ const Bookings = () => {
                                 key={booking._id}
                                 booking={booking}
                                 handleDelete={handleDelete}
+                                handleUpdate={handleUpdate}
                             ></BookingCard>)
                         }
                     </tbody>

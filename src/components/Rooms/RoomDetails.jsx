@@ -1,4 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
+import ReviewHere from "./DetailsMore/ReviewHere";
+
 
 
 const RoomDetails = () => {
@@ -6,13 +8,14 @@ const RoomDetails = () => {
     const details = useLoaderData();
     console.log(details)
 
-   let avl = 'Not Available' ;
+   let avl = 'Available' ;
 
    if(details.availability === true) {
-     avl = 'Available' ;
+     avl = 'Not Available' ;
    }
 
-   
+   const price = details.pricePerNight;
+   const newPrice = price + price * 0.2 ;
 
 
     return (
@@ -28,17 +31,47 @@ const RoomDetails = () => {
                     </div>
                 </div>
             </Link>
-            <div className="card">
+            <div className="md:grid md:grid-cols-3">
                 <div className="card-body">
                     <h2 className="card-title">{details.roomDescription}
                     <div className="badge badge-accent">{avl}</div>
                     </h2>
-                    <p>Price {details.pricePerNight}$</p>
                     <p>Size: {details.roomSize}</p>
-                    <div className="card-actions">
-                    <Link to={`/book/${details._id}`}><button className="btn btn-outline btn-accent">Book Now</button> </Link>
+                    <p>City Skyline</p>
+                    <p>With scenic views including downtown Seattle, This Room provides a luxurious setting to unwind in.</p>
+                </div>
+
+                <div className="card-body">
+                <p className="text-xl font-medium">Advanced Purchase Rate</p>
+                 <p className=" font-medium">Get rewarded by planning ahead</p>
+                 <ul className=" text-xs font-extralight">
+                    <li>Non-refundable Reservation</li>
+                    <li>Premium Wi-Fi</li>
+                    <li>Onsite fitness center with sauna and whirlpool</li>
+                    <li>Full deposit will be taken on day of booking.</li>
+                    <li>No cancellation or modifications are available with this rate plan.</li>
+                    <li>Full deposit will be forfeited with cancellation or no show.</li>
+                 </ul>
+                    
+                </div>
+                <div className="card-body">
+                             
+                    <p>Offer Price : {details.pricePerNight}$</p>
+                    <div className="">
+                    <Link to={`/book/${details._id}`}><button className="btn btn-accent">Book Now</button> </Link>
+                    </div>
+
+                    <p>Price {newPrice}$</p>
+                    <div className="">
+                    <Link ><button className=" bg-accent px-4 py-3 rounded-lg">Book Now</button> </Link>
                     </div>
                 </div>
+            </div>
+
+            <div>
+               
+                <ReviewHere details={details} ></ReviewHere>
+
             </div>
         </div>
     );

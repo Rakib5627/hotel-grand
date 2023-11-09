@@ -10,7 +10,7 @@ const Map = () => {
             <div className="w-1/2">
                 <h3 className="text-xl md:text-4xl text-center" >In the Heart of Seattle <br />
                     Near the Space Needle</h3>
-                <p className=" my-6">Welcome to Pan Pacific Seattle, a Forbes recommended, AAA Four-Diamond and Conde Nast Top Hotel offering unparalleled hospitality and an authentic Pacific Northwest experience. Let us enliven your stay with attentive service and thoughtful touches like oversized soaking tubs, premium linens and technology-enhanced workspaces. We welcome your canine companions with added amenities and special treats with our Paw Pacific Pets program. Inviting and intuitive, no other hotel captures the essence of the Emerald City like we do.
+                <p className=" my-6">Welcome to Hotel Grand Palace, a Forbes recommended, AAA Four-Diamond and Conde Nast Top Hotel offering unparalleled hospitality and an authentic Pacific Northwest experience. Let us enliven your stay with attentive service and thoughtful touches like oversized soaking tubs, premium linens and technology-enhanced workspaces. We welcome your canine companions with added amenities and special treats with our Paw Pacific Pets program. Inviting and intuitive, no other hotel captures the essence of the Emerald City like we do.
                 </p>
                 <p>
 
