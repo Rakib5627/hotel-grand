@@ -7,7 +7,7 @@ import ShowReview from "./DetailsMore/ShowReview";
 const RoomDetails = () => {
 
     const details = useLoaderData();
-    console.log(details)
+   
 
    let avl = 'Available' ;
 

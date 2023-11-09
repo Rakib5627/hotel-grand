@@ -1,8 +1,7 @@
-
+import PropTypes from 'prop-types';
 
 const ShowReviewCard = ({ review }) => {
 
-    console.log(review);
 
     const {customerName , description , rating ,  roomImages , timestamp  }=review;
 
@@ -24,5 +23,9 @@ const ShowReviewCard = ({ review }) => {
         </div>
     );
 };
+
+ShowReviewCard.propTypes ={
+    review: PropTypes.object
+}
 
 export default ShowReviewCard;

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import ShowReviewCard from "./ShowReviewCard";
+import PropTypes from 'prop-types';
 
 
 const ShowReview = ({ serve }) => {
 
-    console.log(serve)
+
 
     const [reviews, setReviews] = useState([]);
 
@@ -38,5 +39,9 @@ const ShowReview = ({ serve }) => {
         </div>
     );
 };
+
+ShowReview.propTypes = {
+      serve : PropTypes.string
+}
 
 export default ShowReview;
