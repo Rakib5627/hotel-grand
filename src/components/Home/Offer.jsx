@@ -56,7 +56,7 @@ const Offer = () => {
                             <div className="card-body">
                                 <h2 className="card-title">
                                     Discount
-                                    <div className="badge badge-secondary">20% off</div>
+                                    <div className="badge badge-secondary text-xs lg:text-base">20%</div>
                                 </h2>
                                 <p>Get Discount on Single Room</p>
                             </div>
@@ -68,9 +68,9 @@ const Offer = () => {
                             <div className="card-body">
                                 <h2 className="card-title">
                                     Couple Room
-                                    <div className="badge badge-secondary">30% off</div>
+                                    <div className="badge badge-secondary">20%f</div>
                                 </h2>
-                                <p>Get 30% Discount On Honeymoon</p>
+                                <p>Get 20% Discount On Honeymoon</p>
                             </div>
                         </div>
                     </div>
@@ -80,9 +80,9 @@ const Offer = () => {
                             <div className="card-body">
                                 <h2 className="card-title">
                                     Double Delux
-                                    <div className="badge badge-secondary">10% off</div>
+                                    <div className="badge badge-secondary">20%</div>
                                 </h2>
-                                <p>10% Discount on double delux room</p>
+                                <p>20% Discount on double delux room</p>
                             </div>
                         </div>
                     </div>
@@ -92,9 +92,9 @@ const Offer = () => {
                             <div className="card-body">
                                 <h2 className="card-title">
                                    Executive Room
-                                    <div className="badge badge-secondary">5% off</div>
+                                    <div className="badge badge-secondary">20%</div>
                                 </h2>
-                                <p>5% discount on executive room</p>
+                                <p>20% discount on executive room</p>
                             </div>
                         </div>
                     </div>
