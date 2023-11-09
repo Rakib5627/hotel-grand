@@ -51,11 +51,11 @@ const Offer = () => {
                 <Slider {...settings}>
 
                     <div className="mx-2">
-                        <div className="card bg-base-100 shadow-xl">
+                        <div className="card">
                             <figure><img src={img1} alt="Shoes" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">
-                                    Discount
+                                    Single Room
                                     <div className="badge badge-secondary text-xs lg:text-base">20%</div>
                                 </h2>
                                 <p>Get Discount on Single Room</p>
@@ -68,7 +68,7 @@ const Offer = () => {
                             <div className="card-body">
                                 <h2 className="card-title">
                                     Couple Room
-                                    <div className="badge badge-secondary">20%f</div>
+                                    <div className="badge badge-secondary text-xs lg:text-base ">20%f</div>
                                 </h2>
                                 <p>Get 20% Discount On Honeymoon</p>
                             </div>
@@ -80,9 +80,9 @@ const Offer = () => {
                             <div className="card-body">
                                 <h2 className="card-title">
                                     Double Delux
-                                    <div className="badge badge-secondary">20%</div>
+                                    <div className="badge badge-secondary text-xs lg:text-base">20%</div>
                                 </h2>
-                                <p>20% Discount on double delux room</p>
+                                <p>20% Discount on delux room</p>
                             </div>
                         </div>
                     </div>
@@ -92,9 +92,9 @@ const Offer = () => {
                             <div className="card-body">
                                 <h2 className="card-title">
                                    Executive Room
-                                    <div className="badge badge-secondary">20%</div>
+                                    <div className="badge badge-secondary text-xs lg:text-base">20%</div>
                                 </h2>
-                                <p>20% discount on executive room</p>
+                                <p>20% discount on Family room</p>
                             </div>
                         </div>
                     </div>
