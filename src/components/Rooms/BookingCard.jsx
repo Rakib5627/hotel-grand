@@ -1,8 +1,9 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import Swal from "sweetalert2";
+import PropTypes from 'prop-types';
 
 
-const BookingCard = ({ booking, handleDelete , handleUpdate}) => {
+const BookingCard = ({ booking, handleDelete }) => {
 
     const { _id, date, title, price, roomImages } = booking;
 
@@ -13,18 +14,11 @@ const BookingCard = ({ booking, handleDelete , handleUpdate}) => {
     const date1 = new Date(date);
     const date2 = new Date(nextDay);
 
-    console.log(date1 , date2)
+    // console.log(date1 , date2)
 
-    if(date1 > date2) {
-        console.log('you can')
-    }
-
-
-
-
-
-
-    
+    // if(date1 > date2) {
+    //     console.log('you can')
+    // }
 
 
     return (
@@ -65,28 +59,17 @@ const BookingCard = ({ booking, handleDelete , handleUpdate}) => {
                 </button>
             </th>
             <th>
-
-                {/* <button onClick={() => {
-                    if(date1 > date2) {
-                        console.log('you can')
-                        handleUpdate(_id,date)
-                    }
-                    else{
-                        Swal.fire({
-                            icon: "error",
-                            title: "Oops...",
-                            text: "Cannot Update",
-                            
-                          });
-                    }
-                     
-                    }      
-                } 
-                 className="btn btn-ghost btn-xs">Update</button> */}
                  <Link to={`/update/${_id}`}>update</Link>
             </th>
         </tr>
     );
 };
+
+
+BookingCard.propTypes = {
+    booking : PropTypes.object,
+    handleDelete : PropTypes.func,
+}
+
 
 export default BookingCard;

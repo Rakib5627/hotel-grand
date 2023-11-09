@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import PropTypes from 'prop-types';
 
 
 const ReviewHere = ({ details }) => {
 
-    // console.log('dddddddddddddd', details)
+    
     const { roomDescription, _id, roomImages } = details;
     const { user } = useContext(AuthContext);
 
@@ -19,7 +20,7 @@ const ReviewHere = ({ details }) => {
         const email = user?.email;
 
         const timestamp = new Date();
-         console.log(timestamp)
+        
 
         const review = {
             customerName: name,
@@ -32,7 +33,7 @@ const ReviewHere = ({ details }) => {
             title:_id,
         }
 
-        console.log(review);
+        // console.log(review);
 
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
@@ -105,5 +106,10 @@ const ReviewHere = ({ details }) => {
         </div>
     );
 };
+
+ReviewHere.propTypes = {
+    details : PropTypes.object
+}
+
 
 export default ReviewHere;
