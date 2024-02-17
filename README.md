@@ -11,3 +11,4 @@ https://hotel-website-2fba0.web.app/
 - You can also cancel booking of room before one day.
 - The website is dynamic and you will get a good user experience.
 - The website completely responsive.
+- All the features are dynamic here.
